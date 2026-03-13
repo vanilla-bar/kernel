@@ -1,7 +1,7 @@
 {
   "name": "ae",
   "owner": {
-    "name": "taku-private"
+    "name": "vanilla-bar"
   },
   "plugins": [
     {
@@ -10,7 +10,7 @@
       "description": "Git/GitHub ワークフロー & 開発支援スキル集",
       "version": "0.1.0",
       "author": {
-        "name": "taku-private"
+        "name": "vanilla-bar"
       },
       "license": "MIT",
       "repository": "https://github.com/vanilla-bar/ae"
