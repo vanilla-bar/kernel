@@ -1,5 +1,5 @@
 {
-  "name": "ae",
+  "name": "kernel",
   "owner": {
     "name": "vanilla-bar"
   },
@@ -13,7 +13,7 @@
         "name": "vanilla-bar"
       },
       "license": "MIT",
-      "repository": "https://github.com/vanilla-bar/ae"
+      "repository": "https://github.com/vanilla-bar/kernel"
     }
   ]
 }

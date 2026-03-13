@@ -1,4 +1,4 @@
-# ae
+# kernel
 
 Claude Code 向けのプラグインマーケットプレイス。
 
@@ -6,10 +6,10 @@ Claude Code 向けのプラグインマーケットプレイス。
 
 ```bash
 # 1. マーケットプレイスを追加
-/plugin marketplace add vanilla-bar/ae
+/plugin marketplace add vanilla-bar/kernel
 
 # 2. プラグインをインストール
-/plugin install ae@ae
+/plugin install ae@kernel
 ```
 
 ## プラグイン一覧
