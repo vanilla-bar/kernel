@@ -4,6 +4,25 @@ Claude Code 向けのプラグインマーケットプレイス。
 
 ## インストール
 
+### npx skills（推奨）
+
+```bash
+# 全スキルを一括インストール
+npx skills add vanilla-bar/kernel --skill "*" -a claude-code --copy
+
+# グローバル（全プロジェクト共通）にインストール
+npx skills add vanilla-bar/kernel --skill "*" -a claude-code --copy -g
+```
+
+### アップデート
+
+```bash
+npx skills check
+npx skills update
+```
+
+### プラグイン
+
 ```bash
 # 1. マーケットプレイスを追加
 /plugin marketplace add vanilla-bar/kernel
@@ -11,6 +30,8 @@ Claude Code 向けのプラグインマーケットプレイス。
 # 2. プラグインをインストール
 /plugin install ae@kernel
 ```
+
+> **Note:** プラグイン方式はセッション間でスキルが消える既知の問題があります（[#17089](https://github.com/anthropics/claude-code/issues/17089)）。現時点では `npx skills` を推奨します。
 
 ## プラグイン一覧
 
