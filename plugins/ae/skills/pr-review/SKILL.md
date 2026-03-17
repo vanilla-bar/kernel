@@ -43,7 +43,12 @@ gh pr view {PR_NUMBER} --json commits
 
 **ファイルが存在する場合:** その内容を読み込み、レビュー観点として適用する。
 
-**ファイルが存在しない場合:** スキル内蔵の [references/perspectives.md](references/perspectives.md) をデフォルトとして使う。
+**ファイルが存在しない場合:** スキル内蔵の [references/perspectives.md](references/perspectives.md) をデフォルトとして使う。さらに、レビュー結果の末尾に以下を追記する:
+
+```
+💡 プロジェクト固有のレビュー観点を設定できます。
+`.agents/pr-review-perspectives.md` を作成すると、次回以降そちらが優先されます。
+```
 
 ## 4. 関連コードの読み込み
 
