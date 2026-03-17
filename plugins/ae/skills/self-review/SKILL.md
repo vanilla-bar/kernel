@@ -1,6 +1,6 @@
 ---
 name: self-review
-description: サブエージェントによるセルフレビュー。仕様書・計画書・ドキュメント・コード差分など、指定した対象を独立した視点でレビューし、考慮漏れや不整合を検出する。
+description: 独立した視点でのセルフレビュー。仕様書・計画書・ドキュメント・コード差分など、指定した対象をレビューし、考慮漏れや不整合を検出する。
 disable-model-invocation: true
 context: fork
 agent: general-purpose
@@ -16,10 +16,20 @@ argument-hint: "<レビュー対象（ファイルパス or 'diff'）>"
 $ARGUMENTS からレビュー対象を判定する:
 
 - **ファイルパス指定** → そのファイルを読んでレビュー
-- **`diff`** → `git diff $(git merge-base HEAD origin/main)...HEAD` のコミット済み差分をレビュー
-- **指定なし** → 未コミットの変更すべて（ステージ済み + ステージ前 + 未追跡ファイル）をレビュー対象とする
+- **`diff`** → デフォルトブランチとのコミット済み差分をレビュー
+- **指定なし** → 未コミットの変更すべて（ステージ済み + ステージ前 + 未追跡ファイル）をレビュー対象とする。未コミットの変更がない場合は「変更がありません」と報告して終了する
 
-未コミットの変更の取得方法:
+デフォルトブランチの取得:
+```bash
+DEFAULT_BRANCH=$(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name')
+```
+
+diff時のコマンド:
+```bash
+git diff $(git merge-base HEAD origin/${DEFAULT_BRANCH})...HEAD
+```
+
+未コミット変更の取得:
 ```bash
 git diff HEAD            # ステージ済み + ステージ前
 git ls-files --others --exclude-standard  # 未追跡ファイル一覧（内容はReadツールで読む）
@@ -59,6 +69,9 @@ git ls-files --others --exclude-standard  # 未追跡ファイル一覧（内容
 - 何が問題か
 - なぜ問題か（どこと不整合か、何が漏れているか）
 - どう修正すべきか（提案）
+
+### 改善提案
+必須ではないが改善すると良い点。
 
 ### 確認事項
 レビューだけでは判断できず、ユーザーに確認が必要な点。
