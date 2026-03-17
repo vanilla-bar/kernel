@@ -1,7 +1,6 @@
 ---
 name: issue-open
-description: GitHub Issueをサッと作成する。
-disable-model-invocation: true
+description: GitHub Issueをサッと作成する。ユーザーが「issueに出して」「issueに上げて」「issue立てて」等と言った時にも使用する。
 argument-hint: "[Issueの説明]"
 ---
 

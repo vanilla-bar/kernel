@@ -1,6 +1,7 @@
 ---
 name: self-review
 description: サブエージェントによるセルフレビュー。仕様書・計画書・ドキュメント・コード差分など、指定した対象を独立した視点でレビューし、考慮漏れや不整合を検出する。
+disable-model-invocation: true
 argument-hint: "<レビュー対象（ファイルパス or 'diff'）>"
 ---
 

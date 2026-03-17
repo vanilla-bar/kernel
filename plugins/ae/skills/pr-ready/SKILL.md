@@ -1,7 +1,6 @@
 ---
 name: pr-ready
-description: /pr-ready - ドラフトPRを更新してレビュー待ちに変更
-disable-model-invocation: true
+description: ドラフトPRを更新してレビュー待ちに変更する。ユーザーが「readyにして」「レビュー待ちにして」「レビュー出して」等と言った時にも使用する。
 argument-hint: "[PR番号]"
 ---
 

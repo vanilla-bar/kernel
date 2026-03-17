@@ -1,7 +1,6 @@
 ---
 name: cut
-description: /cut - featureブランチ作成 + ドラフトPR作成
-disable-model-invocation: true
+description: featureブランチを作成しドラフトPRまで一気に作成する。ユーザーが「ブランチ切って」「ブランチ作って」「作業始めて」等と言った時にも使用する。
 argument-hint: "[やりたいことの説明 or #issue番号]"
 ---
 
