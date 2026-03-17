@@ -1,6 +1,7 @@
 ---
 name: pr-review
 description: PRの差分を直接レビューする。観点に基づいてコードレビューし、問題点・改善案を報告する。
+disable-model-invocation: true
 argument-hint: "[PR番号]"
 ---
 
