@@ -16,8 +16,14 @@ argument-hint: "<レビュー対象（ファイルパス or 'diff'）>"
 $ARGUMENTS からレビュー対象を判定する:
 
 - **ファイルパス指定** → そのファイルを読んでレビュー
-- **`diff`** → `git diff $(git merge-base HEAD origin/main)...HEAD` の差分をレビュー
-- **指定なし** → 変更差分をレビュー対象とする
+- **`diff`** → `git diff $(git merge-base HEAD origin/main)...HEAD` のコミット済み差分をレビュー
+- **指定なし** → 未コミットの変更すべて（ステージ済み + ステージ前 + 未追跡ファイル）をレビュー対象とする
+
+未コミットの変更の取得方法:
+```bash
+git diff HEAD            # ステージ済み + ステージ前
+git ls-files --others --exclude-standard  # 未追跡ファイル一覧（内容はReadツールで読む）
+```
 
 ## 2. レビュー観点の読み込み
 
