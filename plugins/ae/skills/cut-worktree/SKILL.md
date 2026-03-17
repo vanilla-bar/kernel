@@ -141,15 +141,16 @@ EOF
 
 ### 6. 完了メッセージ
 
+`pwd` で取得した絶対パスをもとに、cdコマンドを絶対パスで案内する。
+
 **1項目の場合:**
 ```
 ✅ Worktree `{BRANCH_NAME}` を作成し、ドラフトPRを作成しました（origin/${DEFAULT_BRANCH}起点）
 
-  作業ディレクトリ: ../worktrees/{BRANCH_NAME}
   PR: {PR_URL}
 
 新しいターミナルで以下を実行してください：
-  cd ../worktrees/{BRANCH_NAME}
+  cd {WORKTREE_ABSOLUTE_PATH}
 ```
 
 **2項目以上の場合:**
@@ -157,10 +158,10 @@ EOF
 ✅ {N}個のworktreeを作成しました（origin/${DEFAULT_BRANCH}起点）
 
   1. feature/123-user-list  PR: {PR_URL_1}
-     cd ../worktrees/feature/123-user-list
+     cd {WORKTREE_1_ABSOLUTE_PATH}
 
   2. feature/login-fix      PR: {PR_URL_2}
-     cd ../worktrees/feature/login-fix
+     cd {WORKTREE_2_ABSOLUTE_PATH}
 ```
 
 ## 注意事項
