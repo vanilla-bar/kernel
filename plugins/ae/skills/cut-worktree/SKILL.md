@@ -125,7 +125,7 @@ fi
 
 # 空コミット + push
 cd ../worktrees/{BRANCH_NAME}
-git commit --allow-empty -m "chore: start work on {説明}"
+git commit --allow-empty --no-verify -m "chore: start work on {説明}"
 git push -u origin {BRANCH_NAME}
 
 # ドラフトPR作成

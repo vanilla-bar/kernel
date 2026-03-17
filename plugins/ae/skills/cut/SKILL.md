@@ -79,7 +79,7 @@ DEFAULT_BRANCH=$(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.na
 ```bash
 git fetch origin
 git checkout -b {BRANCH_NAME} origin/${DEFAULT_BRANCH}
-git commit --allow-empty -m "chore: start work on {説明}"
+git commit --allow-empty --no-verify -m "chore: start work on {説明}"
 git push -u origin {BRANCH_NAME}
 ```
 
